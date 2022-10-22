@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://trackival-db:5432/trackival-service
+  jpa:
+    hibernate:
+      # let hibernate create the schema
+      ddl-auto: create
+  sql:
+    init:
+      # fill database with default values
+      mode: always

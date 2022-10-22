@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    hibernate:
+      # let hibernate create the schema
+      ddl-auto: create
+  sql:
+    init:
+      # fill database with default values
+      mode: always
+
+logging:
+  level:
+    com.exxeta: DEBUG
+#    org.hibernate.tool.hbm2ddl: DEBUG
+#    org.hibernate.SQL: DEBUG
+
+#spring.jpa.properties.javax.persistence.schema-generation.create-source=metadata
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
+#spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=create.sql

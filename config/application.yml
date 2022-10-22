@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: trackival-service
+  main:
+    banner-mode: off
+    allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5435/invoicesystem
+    username: postgres
+    password: password
+  jpa:
+    defer-datasource-initialization: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        connection:
+          charSet: "UTF-8"
+  jmx:
+    enabled: false
+  sql:
+    init:
+      platform: postgres
+      mode: never
+      encoding: UTF-8
+  graphql:
+    schema:
+      printer:
+        enabled: true
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST
+      max-age: 1800s
+    graphiql:
+      enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    enabled-by-default: false
+
+#logging:
+#  pattern:
+#    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%mdc] - %msg%n"

@@ -54,6 +54,7 @@ public class User extends BaseEntity {
     private LocalDate dateOfBirth;
 
     @Nullable
+    @Builder.Default
     private String biography = null;
 
     @NotNull

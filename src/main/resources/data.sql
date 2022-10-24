@@ -1,9 +1,9 @@
-insert into address (id, street, house_number, zip_code, town, country)
-values ('00000000-0000-0000-0000-000000000000', 'Mönchstrasse', '4', '53881', 'Euskirchen', 'Germany'),
-       ('00000000-0000-0000-0000-000000000001', 'Waldnieler Straße', '12', '41366', 'Schwalmtal', 'Germany'),
-       ('00000000-0000-0000-0000-000000000002', 'Gladbacher Str.', '29', '40219', 'Düsseldorf', 'Germany'),
-       ('00000000-0000-0000-0000-000000000003', 'Am Karbödel', '10', '29699', 'Walsrode', 'Germany'),
-       ('00000000-0000-0000-0000-000000000004', 'Münchener Str.', '12', '51103', 'Köln', 'Germany');
+insert into address (id, street, house_number, zip_code, town, country, longitude, latitude)
+values ('00000000-0000-0000-0000-000000000000', 'Mönchstrasse', '4', '53881', 'Euskirchen', 'Germany', 0.0, 0.0),
+       ('00000000-0000-0000-0000-000000000001', 'Waldnieler Straße', '12', '41366', 'Schwalmtal', 'Germany', 0.0, 0.0),
+       ('00000000-0000-0000-0000-000000000002', 'Gladbacher Str.', '29', '40219', 'Düsseldorf', 'Germany', 0.0, 0.0),
+       ('00000000-0000-0000-0000-000000000003', 'Am Karbödel', '10', '29699', 'Walsrode', 'Germany', 0.0, 0.0),
+       ('00000000-0000-0000-0000-000000000004', 'Münchener Str.', '12', '51103', 'Köln', 'Germany', 0.0, 0.0);
 
 insert into contact (id, phone, mail, twitter, instagram, facebook, website)
 values ('00000000-0000-0000-0000-000000000000', '+49 151 59199380', 'goekhan.topcu@trackival.com', '@goekhantopcu', '@goekhantopcu', 'goekhantopcu', 'https://goekhantopcu.de'),

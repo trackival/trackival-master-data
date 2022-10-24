@@ -42,6 +42,12 @@ management:
   endpoints:
     enabled-by-default: false
 
+trackival:
+  coordinate:
+    api:
+      key: "1e33fb53a6815e370fe01c1f8eacb57d"
+      url: "http://api.positionstack.com/v1/forward?access_key=%API_KEY%&query=%QUERY%&limit=1&output=json"
+
 #logging:
 #  pattern:
 #    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%mdc] - %msg%n"

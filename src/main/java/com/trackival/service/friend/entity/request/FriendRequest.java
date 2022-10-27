@@ -4,14 +4,8 @@ import com.trackival.service.common.BaseEntity;
 import com.trackival.service.user.entity.User;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.CacheModeType;
-import org.hibernate.annotations.NamedQueries;
-import org.hibernate.annotations.NamedQuery;
-import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity

@@ -10,6 +10,7 @@ import java.util.UUID;
 
 @Data
 @Builder
+@ToString
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)

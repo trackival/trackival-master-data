@@ -2,8 +2,8 @@ package com.trackival.service.common;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.time.LocalDateTime;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Converter(autoApply = true)
 public class LocalDateTimeAttributeConverter implements AttributeConverter<LocalDateTime, Timestamp> {

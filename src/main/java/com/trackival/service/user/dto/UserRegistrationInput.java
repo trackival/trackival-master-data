@@ -1,6 +1,6 @@
 package com.trackival.service.user.dto;
 
-import com.trackival.service.address.dto.AddressInput;
+import com.trackival.service.address.AddressInput;
 import com.trackival.service.user.entity.Gender;
 import lombok.*;
 

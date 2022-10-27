@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class StringListAttributeConverter implements AttributeConverter<List<String>, String> {
     @Override
     public String convertToDatabaseColumn(List<String> attribute) {
-        if(attribute.isEmpty()) {
+        if (attribute.isEmpty()) {
             return "";
         }
         return String.join(";", attribute);

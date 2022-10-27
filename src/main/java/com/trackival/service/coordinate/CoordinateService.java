@@ -1,6 +1,6 @@
 package com.trackival.service.coordinate;
 
-import com.trackival.service.address.entity.Address;
+import com.trackival.service.address.Address;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

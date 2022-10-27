@@ -1,6 +1,6 @@
 package com.trackival.service.event.entity;
 
-import com.trackival.service.address.entity.Address;
+import com.trackival.service.address.Address;
 import com.trackival.service.common.BaseEntity;
 import com.trackival.service.contact.Contact;
 import com.trackival.service.user.entity.User;
@@ -10,7 +10,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-
 @Entity
 @Table(name = "events")
 
@@ -19,29 +18,34 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(callSuper = true)
+@ToString(callSuper = true, onlyExplicitlyIncluded = true)
 @EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
 public class Event extends BaseEntity {
     @NotNull
+    @ToString.Include
     @Column(nullable = false)
     private String title;
 
     @NotNull
+    @ToString.Include
     @Column(nullable = false)
     private String description;
 
     @NotNull
     @Builder.Default
+    @ToString.Include
     @Column(name = "event_start", nullable = false)
     private LocalDateTime start = LocalDateTime.now();
 
     @NotNull
     @Builder.Default
+    @ToString.Include
     @Column(name = "event_end", nullable = false)
     private LocalDateTime end = LocalDateTime.now().plusHours(5);
 
     @NotNull
     @Builder.Default
+    @ToString.Include
     @Column(name = "minimum_age", nullable = false, length = 3)
     private int minimumAge = 16;
 
@@ -59,6 +63,7 @@ public class Event extends BaseEntity {
     private User organizer;
 
     @Builder.Default
+    @ToString.Include
     @Enumerated(value = EnumType.STRING)
     @Column(name = "event_visibility", nullable = false)
     private EventVisibility visibility = EventVisibility.PUBLIC;

@@ -1,6 +1,6 @@
 package com.trackival.service.user;
 
-import com.trackival.service.address.entity.Address;
+import com.trackival.service.address.Address;
 import com.trackival.service.user.entity.Gender;
 import com.trackival.service.user.entity.User;
 import com.trackival.service.user.entity.UserRepository;

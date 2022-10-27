@@ -1,4 +1,4 @@
-package com.trackival.service.user;
+package com.trackival.service.mapper;
 
 import com.trackival.service.contact.ContactMapper;
 import com.trackival.service.contact.Contact;
@@ -29,10 +29,10 @@ class ContactMapperTest {
         final Contact contact = this.mapper.toEntity(input);
 
         assertEquals(input.getPhone(), contact.getPhone());
-        assertEquals(input.getFacebook(), contact.getFacebook());
-        assertEquals(input.getInstagram(), contact.getInstagram());
-        assertEquals(input.getTwitter(), contact.getTwitter());
-        assertEquals(input.getWebsite(), contact.getWebsite());
         assertEquals(input.getMail(), contact.getMail());
+        assertEquals(input.getTwitter(), contact.getTwitter());
+        assertEquals(input.getInstagram(), contact.getInstagram());
+        assertEquals(input.getFacebook(), contact.getFacebook());
+        assertEquals(input.getWebsite(), contact.getWebsite());
     }
 }

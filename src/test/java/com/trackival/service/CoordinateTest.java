@@ -2,7 +2,7 @@ package com.trackival.service;
 
 import com.trackival.service.coordinate.CoordinateResult;
 import com.trackival.service.coordinate.CoordinateService;
-import com.trackival.service.address.entity.Address;
+import com.trackival.service.address.Address;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

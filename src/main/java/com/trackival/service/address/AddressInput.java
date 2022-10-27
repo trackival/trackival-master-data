@@ -1,4 +1,4 @@
-package com.trackival.service.address.dto;
+package com.trackival.service.address;
 
 import lombok.*;
 

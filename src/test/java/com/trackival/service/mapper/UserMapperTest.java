@@ -1,11 +1,12 @@
-package com.trackival.service.user;
+package com.trackival.service.mapper;
 
-import com.trackival.service.address.dto.AddressInput;
+import com.trackival.service.address.AddressInput;
+import com.trackival.service.address.Address;
 import com.trackival.service.user.control.UserMapper;
 import com.trackival.service.user.dto.UserRegistrationInput;
+import com.trackival.service.user.dto.UserUpdateInput;
 import com.trackival.service.user.entity.Gender;
 import com.trackival.service.user.entity.User;
-import com.trackival.service.user.dto.UserCreateInput;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,8 +15,7 @@ import org.springframework.test.context.ActiveProfiles;
 import java.time.LocalDate;
 import java.time.Month;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -47,30 +47,28 @@ class UserMapperTest {
         assertEquals(user.getGender(), registration.getGender());
     }
 
-    /*
     @Test
-    void testUserMapper() {
-        final UserCreateInput input = UserCreateInput.builder()
+    void testUserUpdateInputMapping() {
+        final UserUpdateInput update = UserUpdateInput.builder()
+                .gender(Gender.MALE)
                 .firstName("Gökhan")
                 .lastName("Topcu")
-                .dateOfBirth(LocalDate.of(2002, Month.MARCH, 12))
-                .gender(Gender.MALE)
-                .mail("goekhan.topcu@telekom.de")
-                .password("TestPassword")
-                .address(
-                        AddressInput.builder()
-                                .houseNumber("4")
-                                .street("MönchStr.")
-                                .country("Germany")
-                                .town("Euskirchen")
-                                .zipCode("53881")
-                                .build()
-                )
                 .build();
-        final User user = this.mapper.toEntity(input);
-        assertEquals(input.getFirstName(), user.getFirstName());
-        assertEquals(input.getLastName(), user.getLastName());
-        System.out.println("User: " + user);
+        final User user = User.builder()
+                .gender(Gender.FEMALE)
+                .firstName("Mehmet")
+                .lastName("Autoteile")
+                .mail("mehmet.autoteile@trackival.com")
+                .password("pwd")
+                .username("mehmet.autoteile")
+                .dateOfBirth(LocalDate.now())
+                .biography("Das ist die Biografie")
+                .gender(Gender.FEMALE)
+                .address(Address.builder().street("MönchStr.").houseNumber("4").zipCode("53881").country("Germany").town("Euskirchen").build())
+                .build();
+        final User updated = this.mapper.update(update, user);
+        assertEquals(updated.getFirstName(), user.getFirstName());
+        assertEquals(updated.getMail(), user.getMail());
+        assertNotEquals(updated.getMail(), update.getMail());
     }
-     */
 }

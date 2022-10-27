@@ -1,4 +1,4 @@
-package com.trackival.service.address.entity;
+package com.trackival.service.address;
 
 import com.trackival.service.common.BaseEntity;
 import lombok.*;
@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true, onlyExplicitlyIncluded = true)
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
 public class Address extends BaseEntity {
 

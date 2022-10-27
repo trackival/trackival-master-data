@@ -1,4 +1,4 @@
-package com.trackival.service.friend.control;
+package com.trackival.service.friend.resolver;
 
 import com.trackival.service.friend.entity.relation.FriendRelation;
 import com.trackival.service.friend.entity.relation.FriendRelationId;

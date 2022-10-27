@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class FriendRelation {
     @EmbeddedId
+    @ToString.Include
     private FriendRelationId id;
 
     @ManyToOne(fetch = FetchType.LAZY)

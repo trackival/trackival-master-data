@@ -1,9 +1,9 @@
 package com.trackival.service.user.entity;
 
+import com.trackival.service.address.Address;
 import com.trackival.service.common.BaseEntity;
 import com.trackival.service.common.StringListAttributeConverter;
 import com.trackival.service.contact.Contact;
-import com.trackival.service.address.entity.Address;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,9 +36,9 @@ public class User extends BaseEntity {
     private String lastName;
 
     @NotNull
+    @Column(nullable = false, unique = true)
     @Email(message = "Please provide a valid email address")
     @Pattern(regexp = ".+@.+\\..+", message = "Please provide a valid email address")
-    @Column(nullable = false, unique = true)
     private String mail;
 
     @NotNull
@@ -59,9 +59,10 @@ public class User extends BaseEntity {
 
     @NotNull
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false)
     private Address address;
 
+    @Nullable
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
     private Contact contact;
@@ -75,8 +76,8 @@ public class User extends BaseEntity {
     @Convert(converter = StringListAttributeConverter.class)
     private List<String> interests = new ArrayList<>();
 
-    @Builder.Default
     @NotNull
+    @Builder.Default
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinColumn(name = "settings_id", referencedColumnName = "id")
     private UserSettings settings = new UserSettings();

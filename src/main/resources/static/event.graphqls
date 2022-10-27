@@ -1,0 +1,47 @@
+input EventCreateInput {
+    title: String!
+    description: String!
+    start: DateTime!
+    end: DateTime!
+    minimumAge: Int!
+    address: AddressInput!
+    contact: ContactInput
+    organizerId: ID!
+    visibility: EventVisibility!
+}
+
+input EventUpdateInput {
+    title: String
+    description: String
+    start: DateTime
+    end: DateTime
+    minimumAge: Int
+    address: AddressInput
+    contact: ContactInput
+    visibility: EventVisibility
+}
+
+enum EventVisibility {
+    PUBLIC
+    PRIVATE
+    PROTECTED
+}
+
+type Event {
+    id: ID!
+    title: String!
+    description: String!
+    start: DateTime!
+    end: DateTime!
+    minimumAge: Int!
+    address: Address!
+    contact: Contact!
+    organizer: User!
+    visibility: EventVisibility!
+}
+
+type EventPage {
+    page: Int
+    totalPages: Int
+    events: [Event]!
+}

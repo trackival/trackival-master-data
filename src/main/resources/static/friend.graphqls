@@ -1,0 +1,18 @@
+type FriendRelationId {
+    id1: ID!
+    id2: ID!
+}
+
+type FriendRelation {
+    id: FriendRelationId!
+    friend1: User!
+    friend2: User!
+    timestamp: DateTime!
+}
+
+type FriendRequest {
+    id: ID!
+    sender: User!
+    receiver: User!
+    timestamp: DateTime!
+}

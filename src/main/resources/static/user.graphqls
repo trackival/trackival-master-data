@@ -1,0 +1,44 @@
+input UserRegistrationInput {
+    firstName: String!
+    lastName: String!
+    mail: String!
+    password: String!
+    username: String!
+    dateOfBirth: Date!
+    address: AddressInput!
+    gender: Gender!
+}
+
+input UserUpdateInput {
+    firstName: String
+    lastName: String
+    mail: String
+    password: String
+    username: String
+    dateOfBirth: Date
+    biography: String
+    address: AddressInput
+    contact: ContactInput
+    gender: Gender
+}
+
+type UserSettings {
+    showGender: Boolean!
+    showInterests: Boolean!
+    showDateOfBirth: Boolean!
+}
+
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    mail: String!
+    password: String!
+    username: String!
+    dateOfBirth: Date!
+    address: Address!
+    contact: Contact
+    gender: Gender!
+    interests: [String]!
+    settings: UserSettings!
+}

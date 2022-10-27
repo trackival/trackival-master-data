@@ -1,141 +1,31 @@
 scalar Date
 scalar DateTime
 
-type FriendRelationId {
-    id1: ID!
-    id2: ID!
-}
-
-type FriendRelation {
-    id: FriendRelationId!
-    friend1: User!
-    friend2: User!
-    timestamp: DateTime!
-}
-
-type FriendRequest {
-    id: ID!
-    sender: User!
-    receiver: User!
-    timestamp: DateTime!
-}
-
 enum Gender {
     MALE
     FEMALE
     DIVERSE
 }
 
-input AddressInput {
-    street: String!
-    houseNumber: String!
-    zipCode: String!
-    town: String!
-    country: String!
-}
-
-type Address {
-    id: ID!
-    town: String!
-    country: String!
-    street: String!
-    houseNumber: String!
-    zipCode: String!
-}
-
-input ContactInput {
-    phone: String
-    mail: String
-    twitter: String
-    instagram: String
-    facebook: String
-    website: String
-}
-
-type Contact {
-    phone: String
-    mail: String
-    twitter: String
-    instagram: String
-    facebook: String
-    website: String
-}
-
-input UserRegistrationInput {
-    firstName: String!
-    lastName: String!
-    mail: String!
-    password: String!
-    username: String!
-    dateOfBirth: Date!
-    address: AddressInput!
-    gender: Gender!
-}
-
-input UserBiographyInput {
-    id: ID!
-    biography: String
-}
-
-type UserSettings {
-    showGender: Boolean!
-    showInterests: Boolean!
-    showDateOfBirth: Boolean!
-}
-
-type User {
-    id: ID!
-    firstName: String!
-    lastName: String!
-    mail: String!
-    password: String!
-    username: String!
-    dateOfBirth: Date!
-    address: Address!
-    contact: Contact
-    gender: Gender!
-    interests: [String]!
-    settings: UserSettings!
-}
-
-enum EventVisibility {
-    PUBLIC
-    PRIVATE
-    PROTECTED
-}
-
-type Event {
-    id: ID!
-    title: String!
-    description: String!
-    start: DateTime!
-    end: DateTime!
-    minimumAge: Int!
-    address: Address!
-    contact: Contact!
-    organizer: User!
-    visibility: EventVisibility!
-}
-
-type EventPage {
-    page: Int
-    totalPages: Int
-    events: [Event]!
-}
-
 type Query {
     findUser(id: ID!): User
-    fetchRelations(id: ID!): [FriendRelation]!
+
+    findEvent(id: ID!): Event
     fetchEvents(page: Int!, size: Int!): EventPage!
+
+    fetchRelations(id: ID!): [FriendRelation]!
     fetchIncomingRequests(id: ID!): [FriendRequest]!
 }
 
 type Mutation {
-    registerUser(user: UserRegistrationInput): User
+    registerUser(registration: UserRegistrationInput): User
+    updateUser(id: ID!, update: UserUpdateInput!): User
     addInterest(id: ID!, interest: String): [String!]!
     removeInterest(id: ID!, interest: String): [String!]!
-    updateUser(id: ID!, firstName: String, lastName: String, mail: String, password: String, dateOfBirth: Date, biography: String, address: AddressInput, contact: ContactInput, gender: Gender): User
 
     acceptFriendRequest(requestId: ID!): FriendRelation
     sendFriendRequest(senderId: ID!, receiverId: ID!): FriendRequest
+
+    createEvent(create: EventCreateInput!): Event
+    updateEvent(id: ID!, update: EventUpdateInput): Event
 }

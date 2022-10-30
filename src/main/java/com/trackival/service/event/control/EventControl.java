@@ -45,7 +45,7 @@ public class EventControl {
         return EventPage.builder().totalPages(totalPages).page(current).events(result.getContent()).build();
     }
 
-    public @NotNull List<@NotNull Event> fetchEvents(int page, int size, double longitude, double latitude, int distance) {
-        return Collections.emptyList();
+    public @NotNull EventPage fetchEvents(int page, int size, double longitude, double latitude, int distance) {
+        return EventPage.empty();
     }
 }

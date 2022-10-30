@@ -12,6 +12,7 @@ type Query {
 
     findEvent(id: ID!): Event
     fetchEvents(page: Int!, size: Int!): EventPage!
+    fetchEvents(page: Int!, size: Int!, longitude: Float!, latitude: Float, distance: Int!): EventPage!
 
     fetchRelations(id: ID!): [FriendRelation]!
     fetchIncomingRequests(id: ID!): [FriendRequest]!
@@ -28,5 +29,4 @@ type Mutation {
 
     createEvent(create: EventCreateInput!): Event
     updateEvent(id: ID!, update: EventUpdateInput): Event
-    fetchEvents(page: Int!, size: Int!, longitude: Float!, latitude: Float, distance: Int!): [Event!]!
 }

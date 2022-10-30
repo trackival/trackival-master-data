@@ -22,7 +22,7 @@ public class EventQuery implements GraphQLQueryResolver {
         return this.control.fetchEvents(page, size);
     }
 
-    public List<Event> fetchEvents(int page, int size, double longitude, double latitude, int distance) {
+    public EventPage fetchEvents(int page, int size, double longitude, double latitude, int distance) {
         return this.control.fetchEvents(page, size, longitude, latitude, distance);
     }
 }

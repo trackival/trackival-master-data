@@ -1,4 +1,4 @@
-package com.trackival.mdm.common;
+package com.trackival.mdm.common.converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

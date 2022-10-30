@@ -2,7 +2,7 @@ package com.trackival.mdm.user.entity;
 
 import com.trackival.mdm.address.Address;
 import com.trackival.mdm.common.BaseEntity;
-import com.trackival.mdm.common.StringListAttributeConverter;
+import com.trackival.mdm.common.converter.StringListAttributeConverter;
 import com.trackival.mdm.contact.Contact;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;

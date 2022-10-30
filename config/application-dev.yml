@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://trackival-db:5432/trackival-service
+    url: jdbc:postgresql://trackival-db:5432/trackival-master-data
   jpa:
     hibernate:
       # let hibernate create the schema

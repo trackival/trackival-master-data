@@ -69,7 +69,7 @@ java {
 }
 
 shadowJar {
-    archiveFileName.set("trackival-service.jar")
+    archiveFileName.set("trackival-master-data.jar")
     //relocate "com.google", "trackival.com.google"
 }
 

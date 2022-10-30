@@ -1,6 +1,6 @@
 spring:
   application:
-    name: trackival-service
+    name: trackival-master-data
   main:
     banner-mode: off
     allow-circular-references: true

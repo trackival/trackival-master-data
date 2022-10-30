@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://trackival-db:5432/trackival-service
+    url: jdbc:postgresql://trackival-db:5432/trackival-master-data
 
 #spring.jpa.properties.javax.persistence.schema-generation.create-source=metadata
 #spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create

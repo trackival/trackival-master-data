@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user_settings")
+@Table(name = "trackival_user_settings")
 
 @Getter
 @Setter

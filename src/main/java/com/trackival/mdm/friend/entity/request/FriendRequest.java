@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "friend_request")
+@Table(name = "trackival_friend_request")
 
 @Getter
 @Setter

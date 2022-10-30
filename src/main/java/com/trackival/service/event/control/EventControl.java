@@ -12,6 +12,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -41,5 +43,9 @@ public class EventControl {
         final int current = result.getNumber();
         final int totalPages = result.getTotalPages();
         return EventPage.builder().totalPages(totalPages).page(current).events(result.getContent()).build();
+    }
+
+    public @NotNull List<@NotNull Event> fetchEvents(int page, int size, double longitude, double latitude, int distance) {
+        return Collections.emptyList();
     }
 }

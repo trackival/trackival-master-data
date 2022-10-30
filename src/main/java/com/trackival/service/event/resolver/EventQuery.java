@@ -7,6 +7,7 @@ import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.UUID;
 
 @Component
@@ -19,5 +20,9 @@ public class EventQuery implements GraphQLQueryResolver {
 
     public EventPage fetchEvents(int page, int size) {
         return this.control.fetchEvents(page, size);
+    }
+
+    public List<Event> fetchEvents(int page, int size, double longitude, double latitude, int distance) {
+        return this.control.fetchEvents(page, size, longitude, latitude, distance);
     }
 }

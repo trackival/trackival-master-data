@@ -28,4 +28,5 @@ type Mutation {
 
     createEvent(create: EventCreateInput!): Event
     updateEvent(id: ID!, update: EventUpdateInput): Event
+    fetchEvents(page: Int!, size: Int!, longitude: Float!, latitude: Float, distance: Int!): [Event!]!
 }

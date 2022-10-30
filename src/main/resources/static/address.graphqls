@@ -13,4 +13,6 @@ type Address {
     street: String!
     houseNumber: String!
     zipCode: String!
+    longitude: Float!
+    latitude: Float!
 }

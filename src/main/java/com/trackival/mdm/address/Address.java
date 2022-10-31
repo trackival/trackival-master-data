@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "trackival_address")
+@Table(name = "address")
 
 @Getter
 @Setter

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "trackival_event")
+@Table(name = "events")
 
 @Getter
 @Setter

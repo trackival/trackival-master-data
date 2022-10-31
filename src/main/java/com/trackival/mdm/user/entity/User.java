@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "trackival_user")
+@Table(name = "users")
 
 @Getter
 @Setter

@@ -1,12 +1,14 @@
 package com.trackival.mdm.event.control;
 
-import com.trackival.mdm.user.control.UserControl;
 import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.dto.EventUpdateInput;
 import com.trackival.mdm.event.entity.Event;
 import com.trackival.mdm.event.entity.EventRepository;
+import com.trackival.mdm.event.exception.EventNotFoundException;
+import com.trackival.mdm.user.control.UserControl;
 import com.trackival.mdm.user.entity.User;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,13 +17,14 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class EventControl {
     private EventMapper mapper;
     private UserControl userControl;
     private EventRepository repository;
 
-    public Event findEvent(@NotNull UUID id) {
-        return this.repository.findById(id).orElseThrow();
+    public @NotNull Event findEvent(@NotNull UUID id) {
+        return this.repository.findById(id).orElseThrow(() -> new EventNotFoundException(id));
     }
 
     public Event createEvent(@NotNull EventCreateInput create) {
@@ -30,7 +33,7 @@ public class EventControl {
         return this.repository.save(event);
     }
 
-    public Event updateEvent(@NotNull UUID id, @NotNull EventUpdateInput update) {
+    public @NotNull Event updateEvent(@NotNull UUID id, @NotNull EventUpdateInput update) {
         final Event event = this.findEvent(id);
         this.mapper.update(update, event);
         return this.repository.save(event);
@@ -43,7 +46,7 @@ public class EventControl {
         return EventPage.builder().totalPages(totalPages).page(current).events(result.getContent()).build();
     }
 
-    public @NotNull EventPage fetchEvents(int page, int size, double longitude, double latitude, int distance) {
+    public @NotNull EventPage fetchEventsByPosition(int page, int size, double longitude, double latitude, int distance) {
         return EventPage.empty();
     }
 }

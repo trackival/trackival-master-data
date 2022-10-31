@@ -5,6 +5,7 @@ import com.trackival.mdm.user.dto.UserUpdateInput;
 import com.trackival.mdm.user.entity.User;
 import com.trackival.mdm.user.entity.UserInterestRepository;
 import com.trackival.mdm.user.entity.UserRepository;
+import com.trackival.mdm.user.exception.UserNotFoundException;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class UserControl {
     private UserInterestRepository interestRepository;
 
     public User findUser(@NotNull UUID id) {
-        return this.repository.findById(id).orElseThrow();
+        return this.repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     public User registerUser(@NotNull UserRegistrationInput registration) {

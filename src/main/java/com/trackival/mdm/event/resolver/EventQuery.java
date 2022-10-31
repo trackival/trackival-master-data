@@ -4,12 +4,14 @@ import com.trackival.mdm.event.control.EventControl;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.entity.Event;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
+@AllArgsConstructor
 public class EventQuery implements GraphQLQueryResolver {
     private EventControl control;
 
@@ -21,7 +23,7 @@ public class EventQuery implements GraphQLQueryResolver {
         return this.control.fetchEvents(page, size);
     }
 
-    public EventPage fetchEvents(int page, int size, double longitude, double latitude, int distance) {
-        return this.control.fetchEvents(page, size, longitude, latitude, distance);
+    public EventPage fetchEventsByPosition(int page, int size, double longitude, double latitude, int distance) {
+        return this.control.fetchEventsByPosition(page, size, longitude, latitude, distance);
     }
 }

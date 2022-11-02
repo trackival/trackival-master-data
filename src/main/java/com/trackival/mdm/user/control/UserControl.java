@@ -6,6 +6,7 @@ import com.trackival.mdm.user.entity.User;
 import com.trackival.mdm.user.entity.UserInterestRepository;
 import com.trackival.mdm.user.entity.UserRepository;
 import com.trackival.mdm.user.exception.UserNotFoundException;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class UserControl {
     private UserMapper mapper;
     private UserRepository repository;

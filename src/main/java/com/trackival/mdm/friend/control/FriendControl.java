@@ -8,6 +8,7 @@ import com.trackival.mdm.friend.entity.request.FriendRequestRepository;
 import com.trackival.mdm.friend.exception.FriendRequestNotFoundException;
 import com.trackival.mdm.user.control.UserControl;
 import com.trackival.mdm.user.entity.User;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class FriendControl {
     private UserControl userControl;
     private FriendRequestRepository requestRepository;

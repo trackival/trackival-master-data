@@ -5,6 +5,7 @@ import com.trackival.mdm.user.dto.UserRegistrationInput;
 import com.trackival.mdm.user.dto.UserUpdateInput;
 import com.trackival.mdm.user.entity.User;
 import graphql.kickstart.tools.GraphQLMutationResolver;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
+@AllArgsConstructor
 public class UserMutation implements GraphQLMutationResolver {
     private UserControl control;
 

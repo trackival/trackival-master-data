@@ -4,12 +4,14 @@ import com.trackival.mdm.friend.control.FriendControl;
 import com.trackival.mdm.friend.entity.relation.FriendRelation;
 import com.trackival.mdm.friend.entity.request.FriendRequest;
 import graphql.kickstart.tools.GraphQLMutationResolver;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
+@AllArgsConstructor
 public class FriendMutation implements GraphQLMutationResolver {
     private FriendControl friendControl;
 

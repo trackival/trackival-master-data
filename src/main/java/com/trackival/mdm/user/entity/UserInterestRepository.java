@@ -1,5 +1,6 @@
 package com.trackival.mdm.user.entity;
 
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 @Component
+@AllArgsConstructor
 public class UserInterestRepository {
     @PersistenceUnit
     private EntityManagerFactory factory;

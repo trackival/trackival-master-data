@@ -5,12 +5,14 @@ import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventUpdateInput;
 import com.trackival.mdm.event.entity.Event;
 import graphql.kickstart.tools.GraphQLMutationResolver;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
+@AllArgsConstructor
 public class EventMutation implements GraphQLMutationResolver {
     private EventControl control;
 

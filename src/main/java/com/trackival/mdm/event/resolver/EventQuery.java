@@ -4,12 +4,14 @@ import com.trackival.mdm.event.control.EventControl;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.entity.Event;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
+@AllArgsConstructor
 public class EventQuery implements GraphQLQueryResolver {
     private EventControl control;
 

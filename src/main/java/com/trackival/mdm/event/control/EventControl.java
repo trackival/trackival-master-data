@@ -19,8 +19,8 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class EventControl {
-    private EventMapper mapper;
     private UserControl userControl;
+    private EventMapper mapper;
     private EventRepository repository;
 
     public @NotNull Event findEvent(@NotNull UUID id) {

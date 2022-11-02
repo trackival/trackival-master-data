@@ -4,6 +4,7 @@ import com.trackival.mdm.friend.control.FriendControl;
 import com.trackival.mdm.friend.entity.relation.FriendRelation;
 import com.trackival.mdm.friend.entity.request.FriendRequest;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,11 +14,11 @@ import java.util.UUID;
 public class FriendQuery implements GraphQLQueryResolver {
     private FriendControl control;
 
-    public List<FriendRelation> fetchRelations(UUID id) {
+    public @NotNull List<@NotNull FriendRelation> fetchRelations(@NotNull UUID id) {
         return this.control.fetchRelations(id);
     }
 
-    public List<FriendRequest> fetchIncomingRequests(UUID id) {
+    public @NotNull List<@NotNull FriendRequest> fetchIncomingRequests(@NotNull UUID id) {
         return this.control.fetchIncomingRequests(id);
     }
 }

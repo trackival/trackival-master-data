@@ -12,7 +12,7 @@ import java.util.UUID;
 public class UserQuery implements GraphQLQueryResolver {
     private UserControl control;
 
-    public User findUser(@NotNull UUID id) {
+    public @NotNull User findUser(@NotNull UUID id) {
         return this.control.findUser(id);
     }
 }

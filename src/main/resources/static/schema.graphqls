@@ -8,25 +8,25 @@ enum Gender {
 }
 
 type Query {
-    findUser(id: ID!): User
+    findUser(id: ID!): User!
 
-    findEvent(id: ID!): Event
+    findEvent(id: ID!): Event!
     fetchEvents(page: Int!, size: Int!): EventPage!
     fetchEventsByPosition(page: Int!, size: Int!, longitude: Float!, latitude: Float, distance: Int!): EventPage!
 
-    fetchRelations(id: ID!): [FriendRelation]!
-    fetchIncomingRequests(id: ID!): [FriendRequest]!
+    fetchRelations(id: ID!): [FriendRelation!]!
+    fetchIncomingRequests(id: ID!): [FriendRequest!]!
 }
 
 type Mutation {
-    registerUser(registration: UserRegistrationInput): User
-    updateUser(id: ID!, update: UserUpdateInput!): User
+    registerUser(registration: UserRegistrationInput): User!
+    updateUser(id: ID!, update: UserUpdateInput!): User!
     addInterest(id: ID!, interest: String): [String!]!
     removeInterest(id: ID!, interest: String): [String!]!
 
-    acceptFriendRequest(requestId: ID!): FriendRelation
-    sendFriendRequest(senderId: ID!, receiverId: ID!): FriendRequest
+    acceptFriendRequest(requestId: ID!): FriendRelation!
+    sendFriendRequest(senderId: ID!, receiverId: ID!): FriendRequest!
 
-    createEvent(create: EventCreateInput!): Event
-    updateEvent(id: ID!, update: EventUpdateInput): Event
+    createEvent(create: EventCreateInput!): Event!
+    updateEvent(id: ID!, update: EventUpdateInput): Event!
 }

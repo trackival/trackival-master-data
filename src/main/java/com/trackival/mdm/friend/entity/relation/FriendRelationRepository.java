@@ -16,5 +16,4 @@ public interface FriendRelationRepository extends JpaRepository<FriendRelation, 
 
     @Query("from FriendRelation relation where relation.id.id1=:userId or relation.id.id2=:userId")
     List<FriendRelation> findRelationsByUserId(@Param("userId") UUID userId);
-
 }

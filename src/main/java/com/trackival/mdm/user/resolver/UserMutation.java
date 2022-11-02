@@ -15,11 +15,11 @@ import java.util.UUID;
 public class UserMutation implements GraphQLMutationResolver {
     private UserControl control;
 
-    public User registerUser(@NotNull UserRegistrationInput registration) {
+    public @NotNull User registerUser(@NotNull UserRegistrationInput registration) {
         return this.control.registerUser(registration);
     }
 
-    public User updateUser(@NotNull UUID id, @NotNull UserUpdateInput update) {
+    public @NotNull User updateUser(@NotNull UUID id, @NotNull UserUpdateInput update) {
         return this.control.updateUser(id, update);
     }
 

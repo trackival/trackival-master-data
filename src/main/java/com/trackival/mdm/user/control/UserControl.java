@@ -18,16 +18,16 @@ public class UserControl {
     private UserRepository repository;
     private UserInterestRepository interestRepository;
 
-    public User findUser(@NotNull UUID id) {
+    public @NotNull User findUser(@NotNull UUID id) {
         return this.repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
-    public User registerUser(@NotNull UserRegistrationInput registration) {
+    public @NotNull User registerUser(@NotNull UserRegistrationInput registration) {
         final User user = this.mapper.toEntity(registration);
         return this.repository.save(user);
     }
 
-    public User updateUser(@NotNull UUID id, @NotNull UserUpdateInput update) {
+    public @NotNull User updateUser(@NotNull UUID id, @NotNull UserUpdateInput update) {
         final User user = this.repository.findById(id).orElseThrow();
         final User modified = this.mapper.update(update, user);
         return this.repository.save(modified);

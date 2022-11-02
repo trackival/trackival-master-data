@@ -23,14 +23,4 @@ public class Contact extends BaseEntity {
     private String instagram;
     private String facebook;
     private String website;
-
-    public Contact merge(Contact contact) {
-        this.phone = contact.getPhone();
-        this.mail = contact.getMail();
-        this.twitter = contact.getTwitter();
-        this.instagram = contact.getInstagram();
-        this.facebook = contact.getFacebook();
-        this.website = contact.getWebsite();
-        return this;
-    }
 }

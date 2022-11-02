@@ -48,15 +48,6 @@ public class Address extends BaseEntity {
     @Column(nullable = false, precision = 6, scale = 2)
     private double latitude = 0.0;
 
-    public Address merge(Address address) {
-        this.street = address.getStreet();
-        this.houseNumber = address.getHouseNumber();
-        this.zipCode = address.getZipCode();
-        this.town = address.getTown();
-        this.country = address.getCountry();
-        return this;
-    }
-
     public String toFormattedString() {
         return String.format("%s %s, %s %s %s", this.street, this.houseNumber, this.zipCode, this.town, this.country);
     }

@@ -5,6 +5,7 @@ import com.trackival.mdm.user.dto.UserUpdateInput;
 import com.trackival.mdm.user.entity.User;
 import com.trackival.mdm.user.entity.UserInterestRepository;
 import com.trackival.mdm.user.entity.UserRepository;
+import com.trackival.mdm.user.entity.UserSettings;
 import com.trackival.mdm.user.exception.UserNotFoundException;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +23,10 @@ public class UserControl {
 
     public @NotNull User findUser(@NotNull UUID id) {
         return this.repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+    }
+
+    public @NotNull UserSettings findSettings(@NotNull UUID id) {
+        return this.repository.findSettingsById(id);
     }
 
     public @NotNull User registerUser(@NotNull UserRegistrationInput registration) {

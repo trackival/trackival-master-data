@@ -50,11 +50,11 @@ public class Event extends BaseEntity {
     private int minimumAge = 16;
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
     private Contact contact;
 

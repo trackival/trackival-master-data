@@ -1,9 +1,9 @@
 package com.trackival.mdm.friend.control;
 
-import com.trackival.mdm.friend.entity.relation.FriendRelationId;
-import com.trackival.mdm.friend.entity.request.FriendRequest;
 import com.trackival.mdm.friend.entity.relation.FriendRelation;
+import com.trackival.mdm.friend.entity.relation.FriendRelationId;
 import com.trackival.mdm.friend.entity.relation.FriendRelationRepository;
+import com.trackival.mdm.friend.entity.request.FriendRequest;
 import com.trackival.mdm.friend.entity.request.FriendRequestRepository;
 import com.trackival.mdm.friend.exception.FriendRequestNotFoundException;
 import com.trackival.mdm.user.control.UserControl;
@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -56,5 +55,13 @@ public class FriendControl {
 
     public @NotNull List<@NotNull FriendRequest> fetchIncomingRequests(@NotNull UUID id) {
         return this.requestRepository.findRequestsByReceiverId(id);
+    }
+
+    public @NotNull User findRequestSender(@NotNull UUID requestId) {
+        return this.requestRepository.findSenderById(requestId);
+    }
+
+    public @NotNull User findRequestReceiver(@NotNull UUID requestId) {
+        return this.requestRepository.findReceiverById(requestId);
     }
 }

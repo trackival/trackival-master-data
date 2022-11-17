@@ -1,5 +1,7 @@
 package com.trackival.mdm.event.control;
 
+import com.trackival.mdm.address.Address;
+import com.trackival.mdm.contact.Contact;
 import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.dto.EventUpdateInput;
@@ -25,6 +27,18 @@ public class EventControl {
 
     public @NotNull Event findEvent(@NotNull UUID id) {
         return this.repository.findById(id).orElseThrow(() -> new EventNotFoundException(id));
+    }
+
+    public @NotNull Address findAddress(@NotNull UUID id) {
+        return this.repository.findAddressById(id);
+    }
+
+    public @NotNull Contact findContact(@NotNull UUID id) {
+        return this.repository.findContactById(id);
+    }
+
+    public @NotNull User findOrganizer(@NotNull UUID id) {
+        return this.repository.findOrganizerById(id);
     }
 
     public Event createEvent(@NotNull EventCreateInput create) {

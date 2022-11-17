@@ -21,12 +21,11 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@ToString(onlyExplicitlyIncluded = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true, onlyExplicitlyIncluded = true)
 public class User extends BaseEntity {
-
     @NotNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -36,6 +35,7 @@ public class User extends BaseEntity {
     private String lastName;
 
     @NotNull
+    @ToString.Include
     @Column(nullable = false, unique = true)
     @Email(message = "Please provide a valid email address")
     @Pattern(regexp = ".+@.+\\..+", message = "Please provide a valid email address")
@@ -46,6 +46,7 @@ public class User extends BaseEntity {
     private String password;
 
     @NotNull
+    @ToString.Include
     @Column(nullable = false, unique = true)
     private String username;
 
@@ -58,7 +59,7 @@ public class User extends BaseEntity {
     private String biography = null;
 
     @NotNull
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false)
     private Address address;
 
@@ -78,7 +79,7 @@ public class User extends BaseEntity {
 
     @NotNull
     @Builder.Default
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "settings_id", referencedColumnName = "id")
     private UserSettings settings = new UserSettings();
 }

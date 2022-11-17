@@ -9,6 +9,7 @@ enum Gender {
 
 type Query {
     findUser(id: ID!): User!
+    findUserSettings(id: ID!): UserSettings!
 
     findEvent(id: ID!): Event!
     fetchEvents(page: Int!, size: Int!): EventPage!

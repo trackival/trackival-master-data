@@ -1,5 +1,6 @@
 package com.trackival.mdm.user.control;
 
+import com.trackival.mdm.address.Address;
 import com.trackival.mdm.user.dto.UserRegistrationInput;
 import com.trackival.mdm.user.dto.UserUpdateInput;
 import com.trackival.mdm.user.entity.User;
@@ -27,6 +28,10 @@ public class UserControl {
 
     public @NotNull UserSettings findSettings(@NotNull UUID id) {
         return this.repository.findSettingsById(id);
+    }
+
+    public @NotNull Address findAddress(@NotNull UUID id) {
+        return this.repository.findAddressById(id);
     }
 
     public @NotNull User registerUser(@NotNull UserRegistrationInput registration) {

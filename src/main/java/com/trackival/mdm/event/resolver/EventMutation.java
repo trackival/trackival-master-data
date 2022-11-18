@@ -1,26 +1,29 @@
 package com.trackival.mdm.event.resolver;
 
+import com.netflix.graphql.dgs.DgsComponent;
+import com.netflix.graphql.dgs.DgsMutation;
+import com.netflix.graphql.dgs.InputArgument;
 import com.trackival.mdm.event.control.EventControl;
 import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventUpdateInput;
 import com.trackival.mdm.event.entity.Event;
-import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Component
+@DgsComponent
 @AllArgsConstructor
-public class EventMutation implements GraphQLMutationResolver {
+public class EventMutation {
     private EventControl control;
 
-    public @NotNull Event createEvent(@NotNull EventCreateInput create) {
+    @DgsMutation
+    public @NotNull Event createEvent(@InputArgument EventCreateInput create) {
         return this.control.createEvent(create);
     }
 
-    public @NotNull Event updateEvent(@NotNull UUID id, @NotNull EventUpdateInput update) {
+    @DgsMutation
+    public @NotNull Event updateEvent(@InputArgument UUID id, @InputArgument EventUpdateInput update) {
         return this.control.updateEvent(id, update);
     }
 }

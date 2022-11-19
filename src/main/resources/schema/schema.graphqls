@@ -19,6 +19,7 @@ type Query {
     fetchIncomingRequests(id: ID!): [FriendRequest!]!
 
     findLikedEvents(userId: ID!): [Like!]!
+    likeCount(eventId: ID!): Int!
     findLikes(eventId: ID!): [Like!]!
 }
 

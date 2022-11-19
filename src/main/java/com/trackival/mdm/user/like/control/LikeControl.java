@@ -18,6 +18,10 @@ public class LikeControl {
         return this.repository.findLikesByEventId(eventId);
     }
 
+    public Integer likeCount(UUID eventId) {
+        return this.repository.likeCount(eventId);
+    }
+
     public List<Like> findLikedEvents(UUID userId) {
         return this.repository.findLikedEventsByUserId(userId);
     }

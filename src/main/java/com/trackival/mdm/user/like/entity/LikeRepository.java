@@ -13,6 +13,9 @@ public interface LikeRepository extends JpaRepository<Like, LikeId> {
     @Query("select l from Like l where l.id.eventId=:eventId")
     List<Like> findLikesByEventId(@Param("eventId") UUID eventId);
 
+    @Query("select count(l.id.eventId) from Like l where l.id.eventId=:eventId")
+    Integer likeCount(@Param("eventId") UUID eventId);
+
     @Query("select l from Like l where l.id.userId=:userId")
     List<Like> findLikedEventsByUserId(@Param("userId") UUID userId);
 }

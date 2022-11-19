@@ -21,6 +21,11 @@ public class LikeQuery {
     }
 
     @DgsQuery
+    public Integer likeCount(@InputArgument UUID eventId) {
+        return this.control.likeCount(eventId);
+    }
+
+    @DgsQuery
     public List<Like> findLikes(@InputArgument UUID eventId) {
         return this.control.findLikes(eventId);
     }

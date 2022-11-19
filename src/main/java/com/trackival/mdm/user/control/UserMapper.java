@@ -19,6 +19,7 @@ public interface UserMapper {
     @Mapping(target = "contact", ignore = true)
     @Mapping(target = "interests", ignore = true)
     @Mapping(target = "settings", ignore = true)
+    @Mapping(target = "likedEvents", ignore = true)
     User toEntity(UserRegistrationInput registration);
 
     @Mapping(target = "user.id", ignore = true)
@@ -34,5 +35,6 @@ public interface UserMapper {
     @Mapping(target = "gender", source = "gender", nullValuePropertyMappingStrategy = IGNORE)
     @Mapping(target = "interests", ignore = true)
     @Mapping(target = "settings", ignore = true)
+    @Mapping(target = "likedEvents", ignore = true)
     User update(UserUpdateInput update, @MappingTarget User user);
 }

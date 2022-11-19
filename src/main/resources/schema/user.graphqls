@@ -41,4 +41,5 @@ type User {
     gender: Gender!
     interests: [String]!
     settings: UserSettings!
+    likedEvents: [Like!]!
 }

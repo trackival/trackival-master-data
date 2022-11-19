@@ -30,11 +30,11 @@ public class UserMutation {
 
     @DgsMutation
     public @NotNull List<@NotNull String> addInterest(@InputArgument UUID id, @InputArgument String interest) {
-        return this.control.addInterest(id, interest);
+        return this.control.handleInterest(id, interest, true);
     }
 
     @DgsMutation
     public @NotNull List<@NotNull String> removeInterest(@InputArgument UUID id, @InputArgument String interest) {
-        return this.control.removeInterest(id, interest);
+        return this.control.handleInterest(id, interest, true);
     }
 }

@@ -1,0 +1,11 @@
+type LikeId {
+    eventId: ID!
+    userId: ID!
+}
+
+type Like {
+    id: LikeId!
+    event: Event
+    user: User
+    likedAt: DateTime!
+}

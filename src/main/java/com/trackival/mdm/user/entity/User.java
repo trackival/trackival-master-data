@@ -4,6 +4,7 @@ import com.trackival.mdm.address.Address;
 import com.trackival.mdm.common.BaseEntity;
 import com.trackival.mdm.common.converter.StringListAttributeConverter;
 import com.trackival.mdm.contact.Contact;
+import com.trackival.mdm.user.like.entity.Like;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;
 
@@ -82,4 +83,8 @@ public class User extends BaseEntity {
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinColumn(name = "settings_id", referencedColumnName = "id")
     private UserSettings settings = new UserSettings();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Like> likedEvents = new ArrayList<>();
 }

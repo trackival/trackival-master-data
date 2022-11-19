@@ -21,6 +21,7 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 public interface EventMapper {
     @Mapping(target = "address", source = "create.address")
     @Mapping(target = "contact", source = "create.contact")
+    @Mapping(target = "likes", ignore = true)
     Event toEntity(EventCreateInput create, User organizer);
 
     @Mapping(target = "event.id", ignore = true)
@@ -33,5 +34,6 @@ public interface EventMapper {
     @Mapping(target = "event.address", source = "update.address", nullValuePropertyMappingStrategy = IGNORE)
     @Mapping(target = "event.contact", source = "update.contact", nullValuePropertyMappingStrategy = IGNORE)
     @Mapping(target = "event.visibility", source = "update.visibility", nullValuePropertyMappingStrategy = IGNORE)
+    @Mapping(target = "likes", ignore = true)
     void update(EventUpdateInput update, @MappingTarget Event event);
 }

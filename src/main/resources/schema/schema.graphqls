@@ -17,6 +17,9 @@ type Query {
 
     fetchRelations(id: ID!): [FriendRelation!]!
     fetchIncomingRequests(id: ID!): [FriendRequest!]!
+
+    findLikedEvents(userId: ID!): [Like!]!
+    findLikes(eventId: ID!): [Like!]!
 }
 
 type Mutation {
@@ -24,6 +27,9 @@ type Mutation {
     updateUser(id: ID!, update: UserUpdateInput!): User!
     addInterest(id: ID!, interest: String): [String!]!
     removeInterest(id: ID!, interest: String): [String!]!
+
+    like(userId: ID!, eventId: ID!): [Like!]!
+    unlike(userId: ID!, eventId: ID!): [Like!]!
 
     acceptFriendRequest(requestId: ID!): FriendRelation!
     sendFriendRequest(senderId: ID!, receiverId: ID!): FriendRequest!

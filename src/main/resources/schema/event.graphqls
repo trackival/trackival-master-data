@@ -38,6 +38,7 @@ type Event {
     contact: Contact!
     organizer: User!
     visibility: EventVisibility!
+    likes: [Like!]!
 }
 
 type EventPage {

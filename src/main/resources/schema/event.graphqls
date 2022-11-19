@@ -39,6 +39,7 @@ type Event {
     organizer: User!
     visibility: EventVisibility!
     likes: [Like!]!
+    tags: [String!]!
 }
 
 type EventPage {

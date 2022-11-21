@@ -2,7 +2,6 @@ package com.trackival.mdm.event.resolver;
 
 import com.netflix.graphql.dgs.*;
 import com.trackival.mdm.address.Address;
-import com.trackival.mdm.contact.Contact;
 import com.trackival.mdm.event.control.EventControl;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.entity.Event;
@@ -41,12 +40,6 @@ public class EventQuery {
     public @NotNull Address findAddress(DgsDataFetchingEnvironment environment) {
         final Event event = environment.getSource();
         return this.control.findAddress(event.getId());
-    }
-
-    @DgsData(parentType = "Event")
-    public @NotNull Contact findContact(DgsDataFetchingEnvironment environment) {
-        final Event event = environment.getSource();
-        return this.control.findContact(event.getId());
     }
 
     @DgsData(parentType = "Event")

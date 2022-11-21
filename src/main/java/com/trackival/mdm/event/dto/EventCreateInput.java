@@ -1,8 +1,7 @@
 package com.trackival.mdm.event.dto;
 
-import com.trackival.mdm.event.entity.EventVisibility;
 import com.trackival.mdm.address.AddressInput;
-import com.trackival.mdm.contact.ContactInput;
+import com.trackival.mdm.event.entity.EventVisibility;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -19,7 +18,6 @@ public class EventCreateInput {
     private LocalDateTime end;
     private int minimumAge;
     private AddressInput address;
-    private ContactInput contact;
     private UUID organizerId;
     private EventVisibility visibility;
 }

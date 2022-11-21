@@ -1,7 +1,6 @@
 package com.trackival.mdm.user.dto;
 
 import com.trackival.mdm.address.AddressInput;
-import com.trackival.mdm.contact.ContactInput;
 import com.trackival.mdm.user.entity.Gender;
 import lombok.*;
 
@@ -20,6 +19,5 @@ public class UserUpdateInput {
     private LocalDate dateOfBirth;
     private String biography;
     private AddressInput address;
-    private ContactInput contact;
     private Gender gender;
 }

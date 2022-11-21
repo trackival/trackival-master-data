@@ -1,7 +1,6 @@
 package com.trackival.mdm.event.control;
 
 import com.trackival.mdm.address.Address;
-import com.trackival.mdm.contact.Contact;
 import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventPage;
 import com.trackival.mdm.event.dto.EventUpdateInput;
@@ -16,7 +15,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -32,10 +30,6 @@ public class EventControl {
 
     public @NotNull Address findAddress(@NotNull UUID id) {
         return this.repository.findAddressById(id);
-    }
-
-    public @NotNull Contact findContact(@NotNull UUID id) {
-        return this.repository.findContactById(id);
     }
 
     public @NotNull User findOrganizer(@NotNull UUID id) {

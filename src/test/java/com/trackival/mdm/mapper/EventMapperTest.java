@@ -2,7 +2,6 @@ package com.trackival.mdm.mapper;
 
 import com.trackival.mdm.address.AddressInput;
 import com.trackival.mdm.address.Address;
-import com.trackival.mdm.contact.Contact;
 import com.trackival.mdm.event.control.EventMapper;
 import com.trackival.mdm.event.dto.EventCreateInput;
 import com.trackival.mdm.event.dto.EventUpdateInput;
@@ -73,7 +72,6 @@ class EventMapperTest {
                 .end(LocalDateTime.now())
                 .address(Address.builder().build())
                 .organizer(User.builder().build())
-                .contact(Contact.builder().build())
                 .build();
         this.mapper.update(update, event);
 
@@ -85,6 +83,5 @@ class EventMapperTest {
         assertNotNull(event.getEnd());
         assertNotNull(event.getAddress());
         assertNotNull(event.getOrganizer());
-        assertNotNull(event.getContact());
     }
 }

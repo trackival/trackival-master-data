@@ -5,7 +5,6 @@ input EventCreateInput {
     end: DateTime!
     minimumAge: Int!
     address: AddressInput!
-    contact: ContactInput
     organizerId: ID!
     visibility: EventVisibility!
 }
@@ -17,7 +16,6 @@ input EventUpdateInput {
     end: DateTime
     minimumAge: Int
     address: AddressInput
-    contact: ContactInput
     visibility: EventVisibility
 }
 
@@ -35,7 +33,6 @@ type Event {
     end: DateTime!
     minimumAge: Int!
     address: Address!
-    contact: Contact!
     organizer: User!
     visibility: EventVisibility!
     likes: [Like!]!

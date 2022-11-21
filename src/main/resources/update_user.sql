@@ -6,6 +6,5 @@ update User user set
     user.dateOfBirth=if((:dateOfBirth is null), user.dateOfBirth, :dateOfBirth),
     user.biography=if((:biography is null), user.biography, :biography),
     user.address=if((:address is null), user.address, :address),
-    user.contact=if((:contact is null), user.contact, :contact),
     user.gender=if((:gender is null), user.gender, :gender)
 where user.id=:id

@@ -1,0 +1,20 @@
+type Contact {
+    id: ID!
+    contactKey: String!
+    contactValue: String!
+    user: User
+    event: Event
+}
+
+input AddContactInput {
+    key: String!
+    value: String!
+    user: ID
+    event: ID
+}
+
+input RemoveContactInput {
+    key: String!
+    user: ID
+    event: ID
+}

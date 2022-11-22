@@ -40,4 +40,5 @@ type User {
     interests: [String]!
     settings: UserSettings!
     likedEvents: [Like!]!
+    contact: [Contact!]!
 }

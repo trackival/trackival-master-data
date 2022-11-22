@@ -3,6 +3,7 @@ package com.trackival.mdm.event.entity;
 import com.trackival.mdm.address.Address;
 import com.trackival.mdm.common.BaseEntity;
 import com.trackival.mdm.common.converter.StringListAttributeConverter;
+import com.trackival.mdm.contact.entity.Contact;
 import com.trackival.mdm.user.entity.User;
 import com.trackival.mdm.user.like.entity.Like;
 import lombok.*;
@@ -75,4 +76,8 @@ public class Event extends BaseEntity {
     @Column(name = "tags", nullable = false)
     @Convert(converter = StringListAttributeConverter.class)
     private List<String> tags = new ArrayList<>();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Contact> contact = new ArrayList<>();
 }

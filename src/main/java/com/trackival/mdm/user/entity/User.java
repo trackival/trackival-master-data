@@ -3,6 +3,7 @@ package com.trackival.mdm.user.entity;
 import com.trackival.mdm.address.Address;
 import com.trackival.mdm.common.BaseEntity;
 import com.trackival.mdm.common.converter.StringListAttributeConverter;
+import com.trackival.mdm.contact.entity.Contact;
 import com.trackival.mdm.user.like.entity.Like;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;
@@ -81,4 +82,8 @@ public class User extends BaseEntity {
     @Builder.Default
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Like> likedEvents = new ArrayList<>();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Contact> contact = new ArrayList<>();
 }

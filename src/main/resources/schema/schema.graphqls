@@ -37,4 +37,7 @@ type Mutation {
 
     createEvent(create: EventCreateInput!): Event!
     updateEvent(id: ID!, update: EventUpdateInput): Event!
+
+    addContact(data: AddContactInput): [Contact!]!
+    removeContact(data: RemoveContactInput): Boolean
 }

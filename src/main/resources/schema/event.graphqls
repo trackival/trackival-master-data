@@ -37,6 +37,7 @@ type Event {
     visibility: EventVisibility!
     likes: [Like!]!
     tags: [String!]!
+    contact: [Contact!]!
 }
 
 type EventPage {

@@ -56,6 +56,8 @@ public class EventControl {
     }
 
     public @NotNull EventPage fetchEventsByPosition(int page, int size, double longitude, double latitude, int distance) {
-        return EventPage.empty();
+        final PageRequest request = PageRequest.of(page, size);
+        final Page<Event> events = this.repository.fetchEventsByPosition(latitude, longitude, distance, request);
+        return EventPage.builder().page(page).totalPages(events.getTotalPages()).events(events.getContent()).build();
     }
 }

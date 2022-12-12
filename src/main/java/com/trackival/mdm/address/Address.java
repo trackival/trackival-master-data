@@ -40,12 +40,12 @@ public class Address extends BaseEntity {
 
     @NotNull
     @Builder.Default
-    @Column(nullable = false, precision = 6, scale = 2)
+    @Column(nullable = false, precision = 20, scale = 3)
     private double longitude = 0.0;
 
     @NotNull
     @Builder.Default
-    @Column(nullable = false, precision = 6, scale = 2)
+    @Column(nullable = false, precision = 20, scale = 3)
     private double latitude = 0.0;
 
     public String toFormattedString() {
